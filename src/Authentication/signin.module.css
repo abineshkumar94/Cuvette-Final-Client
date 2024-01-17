@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&display=swap");
+
+.signInContainer {
+  display: flex;
+  position: relative;
+  width: 70%;
+  height: 70vh;
+  box-shadow: 0px 0px 30px 0px #00000026;
+  margin-top: 7%;
+  margin-left: 14%;
+}
+
+.SignInQuizzie {
+  position: relative;
+  font-family: Jomhuria;
+  font-weight: 400;
+  color: #474444;
+  font-size: 3.5em;
+  margin-left: 44%;
+  margin-top: 1%;
+}
+
+.signUpBackground {
+  position: absolute;
+  width: 12%;
+  height: 5vh;
+  background: #ffffff;
+  box-shadow: 0px 0px 30px 0px #a9bcff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #474444;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 8%;
+  margin-left: 28%;
+}
+
+.logInText {
+  position: relative;
+  width: 15%;
+  height: 5vh;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #474444;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 8%;
+  margin-left: 2%;
+}
+.signInForm .formGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.signInForm label {
+  display: flex;
+  text-align: right;
+  margin-right: 65px;
+  margin-left: -60%;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
+.signInForm {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 15%;
+  margin-left: 50%;
+}
+
+.signInForm input {
+  padding: 10px;
+  width: 70%;
+  height: 3vh;
+  border-radius: 5px;
+  border: none;
+  background-color: #f4f4f4;
+  display: inline-block;
+  position: relative;
+  left: -25%;
+}
+
+.signInForm input:focus {
+  outline: none;
+}
+
+.error::placeholder {
+    color: red !important;
+ }
+
+.signInForm button {
+  padding: 10px 100px;
+  border-radius: 8px;
+  border: none;
+  background-color: #a9bcff;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin-left: -32%;
+  margin-right: 0%;
+  position: absolute;
+  margin-top: 68%;
+  color: #474444;
+  font-size: 1em;
+  font-weight: 400;
+}

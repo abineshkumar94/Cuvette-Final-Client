@@ -1,0 +1,145 @@
+.background {
+  position: relative;
+  padding: 0%;
+  margin-top: 10%;
+  background-color: #ededed;
+  height: 100vh;
+  margin-top: 0%;
+  overflow: hidden;
+}
+
+.buttonContainer {
+  margin: 0%;
+  width: 15%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-top: -2%;
+}
+
+.buttonContainerPara {
+  font-family: Jomhuria;
+  font-weight: 400;
+  font-size: 3em;
+  color: #474444;
+  letter-spacing: 2px;
+  position: relative;
+  margin-top: 15%;
+  margin-left: 25%;
+}
+
+.containerBtns {
+  width: 55%;
+  height: 7%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1em;
+  background-color: #ffffff;
+  border: none;
+  white-space: nowrap;
+  border-radius: 8px;
+  margin-left: 21%;
+  position: relative;
+  top: 15%;
+  margin-top: 20%;
+  cursor: pointer;
+  color: #474444;
+}
+
+.dashboardButton {
+  box-shadow: 0px 0px 30px 0px #a9bcff;
+}
+
+.logoutBtn {
+  width: 55%;
+  height: 7%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1em;
+  background-color: #ffffff;
+  border: none;
+  white-space: nowrap;
+  border-radius: 8px;
+  margin-left: 21%;
+  position: relative;
+  top: 33%;
+  margin-top: 20%;
+  cursor: pointer;
+  color: #474444;
+}
+
+.detailContainer {
+  width: 68%;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 23%;
+  position: absolute;
+  top: 10%;
+  gap: 3%;
+}
+
+.detailContainerBox {
+  position: relative;
+  background-color: #ffffff;
+  width: 60%;
+  height: 15vh;
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.value1 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #ff5d01;
+}
+
+.detailPara1 {
+  font-weight: 500;
+  font-size: 0.8em;
+  color: #ff5d01;
+}
+
+.value2 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #60b84b;
+}
+
+.detailPara2 {
+  font-weight: 500;
+  font-size: 0.8em;
+  color: #60b84b;
+}
+
+.value3 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #5076ff;
+}
+
+.detailPara3 {
+  font-weight: 500;
+  font-size: 0.8em;
+  color: #5076ff;
+}
+
+.trendingQuizContainer {
+    position: relative;
+    top: 32%;
+    left: 24%;
+}
+
+.trendingPara {
+    font-weight: 700;
+    color: #474444;
+    font-size: 1.5em;
+}
+
+
+
+

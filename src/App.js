@@ -5,6 +5,7 @@ import Dashboard from "./Components/Dashboard";
 import Analytics from "./Components/Analytics";
 import Signin from "./Authentication/Signin";
 import Login from "./Authentication/Login";
+import CreateQuiz from "./Components/CreateQuiz";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="signin" element={<Signin />} />
         <Route path="login" element={<Login />} />
         <Route path="analytics" element={ <Analytics/> }/>
+        <Route path="createquiz" element= { <CreateQuiz/> } />
       </Routes>
     </div>
   );

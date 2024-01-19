@@ -3,8 +3,14 @@ import styles from "./analytics.module.css";
 import deleteIcon from "../Images/delete.png";
 import shareIcon from "../Images/share.png";
 import editIcon from "../Images/edit.png";
+import { useNavigate } from "react-router-dom";
 
 const Analytics = () => {
+  const navigate = useNavigate();
+
+  const goToDashboard = () => {
+    navigate('/dashboard')
+  }
   return (
     <div className={styles.analyticsBg}>
       <div className={styles.quizAnalysisContainer}>
@@ -36,7 +42,7 @@ const Analytics = () => {
      </div>
       <div className={styles.buttonContainer}>
         <p className={styles.buttonContainerPara}>QUIZZIE</p>
-        <button className={styles.containerBtns}>Dashboard</button>
+        <button className={styles.containerBtns} onClick={goToDashboard}>Dashboard</button>
         <button className={`${styles.containerBtns} ${styles.dashboardButton}`}>
           Analytics
         </button>

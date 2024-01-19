@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from "./createquiz.module.css";
+import { useNavigate } from "react-router-dom";
 
-
-function CreateQuiz() {
+const CreateQuiz = () => {
+    const navigate = useNavigate();
   return (
     <div className= {styles.createTransparent } >
             <div className= {styles.createContainerBox} >

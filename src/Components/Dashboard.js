@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "./dashboard.module.css";
-
-function Dashboard() {
+import { useNavigate } from "react-router-dom";
+const Dashboard = () => {
+  const navigate = useNavigate();
+  
+  const goToDashboard = () => {
+    navigate('/dashboard')
+  }
+  const goToAnalytics = () => {
+    navigate('/analytics');
+  }
   return (
     <div className={styles.background}>
       <div className={styles.detailContainer}>
@@ -23,10 +31,10 @@ function Dashboard() {
        </div>
       <div className={styles.buttonContainer}>
         <p className={styles.buttonContainerPara}>QUIZZIE</p>
-        <button className={`${styles.containerBtns} ${styles.dashboardButton}`}>
+        <button className={`${styles.containerBtns} ${styles.dashboardButton}`} onClick={goToDashboard}>
           Dashboard
         </button>
-        <button className={styles.containerBtns}>Analytics</button>
+        <button className={styles.containerBtns} onClick={goToAnalytics}>Analytics</button>
         <button className={styles.containerBtns}>Create Quiz</button>
         <button className={styles.logoutBtn}>Logout</button>
       </div>

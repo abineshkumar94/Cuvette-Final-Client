@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./dashboard.module.css";
 import { useNavigate } from "react-router-dom";
+import CreateQuiz from './CreateQuiz';
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [showCreateQuiz, setShowCreateQuiz] = useState(false);
   
   const goToDashboard = () => {
     navigate('/dashboard')
@@ -10,6 +12,11 @@ const Dashboard = () => {
   const goToAnalytics = () => {
     navigate('/analytics');
   }
+
+  const handleCreateQuizClick = () => {
+    setShowCreateQuiz(true); 
+  }
+
   return (
     <div className={styles.background}>
       <div className={styles.detailContainer}>
@@ -35,8 +42,9 @@ const Dashboard = () => {
           Dashboard
         </button>
         <button className={styles.containerBtns} onClick={goToAnalytics}>Analytics</button>
-        <button className={styles.containerBtns}>Create Quiz</button>
+        <button className={styles.containerBtns} onClick={handleCreateQuizClick}>Create Quiz</button>
         <button className={styles.logoutBtn}>Logout</button>
+        {showCreateQuiz && <CreateQuiz />}
       </div>
     </div>
   );

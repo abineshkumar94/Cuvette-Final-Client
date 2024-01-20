@@ -66,202 +66,264 @@
 }
 
 .qandaformContainer {
-    position: relative;
-    top: 5%;
-    display: block;
-    margin-left: 4%;
+  position: relative;
+  top: 5%;
+  display: block;
+  margin-left: 4%;
+  border: none;
+}
+
+.qandacreateform {
+  width: 95%;
+  height: 7vh;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+}
+
+.radioContainer {
+  position: relative;
+  display: flex;
+  margin-top: 6%;
+  left: 12%;
+  gap: 8%;
+  font-weight: 500;
+  color: #9f9f9f;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.radioContainer input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.radioContainer input[type="radio"]:checked {
+  background-color: #000000;
+}
+
+.textUrlContainer {
+  position: relative;
+  display: flex;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.textUrlForm {
+  width: 30%;
+  height: 5vh;
+  margin-left: 2%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+}
+
+.textUrlForm1 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 38%;
+  position: absolute;
+  border-radius: 8px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  outline: none;
+}
+
+.radioBtn1 {
+  position: absolute;
+  margin-left: -35%;
+  margin-top: 7%;
+}
+
+.textUrlForm2 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 4%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  position: absolute;
+  margin-top: 6%;
+  right: 65%;
+}
+
+.textUrlForm3 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 3.2%;
+  position: absolute;
+  border-radius: 8px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  outline: none;
+  margin-top: 6%;
+}
+
+.radioBtn2 {
+  position: absolute;
+  margin-left: -35%;
+  margin-top: 13%;
+}
+
+.textUrlForm4 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 4%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  position: absolute;
+  margin-top: 12%;
+  right: 65%;
+}
+
+.textUrlForm5 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 3.2%;
+  position: absolute;
+  border-radius: 8px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  outline: none;
+  margin-top: 12%;
+}
+
+.deleteIcon1 {
+    position: absolute;
+    margin-top: 12.5%;
+    margin-left: 36%;
     border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+.radioBtn3 {
+  position: absolute;
+  margin-left: -35%;
+  margin-top: 19%;
+}
+
+.textUrlForm6 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 4%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  position: absolute;
+  margin-top: 18%;
+  right: 65%;
+}
+
+.textUrlForm7 {
+  width: 30%;
+  height: 5vh;
+  margin-left: 3.2%;
+  position: absolute;
+  border-radius: 8px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  font-size: 1.1em;
+  padding-left: 1%;
+  color: #9f9f9f;
+  outline: none;
+  margin-top: 18%;
+}
+
+.deleteIcon2 {
+  position: absolute;
+  margin-top: 19%;
+  margin-left: 36%;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.addOptionBtn {
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 4%;
+    width: 25%;
+    height: 5vh;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px #9f9f9f;
+    cursor: pointer;
+    color: #474444;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.caCqContainer {
+    display: flex;
+    position: relative;
+    margin-top: 26%;
+    gap: 23%;
+    margin-left: 6%;
+}
+
+.caCqBtns {
+    width: 35%;
+    height: 6vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #474444;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px #9f9f9f;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+.cancelBtn:hover {
+    background-color: #f53c4f;
+    color: #ffffff;
+  }
+
+  .continueBtn:hover {
+    background-color: #60b84b;
+    color: #ffffff;
   }
   
-  .qandacreateform {
-    width: 95%;
-    height: 7vh;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-  }
-
-  .radioContainer {
-    position: relative;
-    display: flex;
-    margin-top: 6%;
-    left: 12%;
-    gap: 8%;
-    font-weight: 500;
-    color: #9f9f9f;
-    font-size: 1.1em;
-    cursor: pointer;
-  }
-
-  .radioContainer input {
-    margin-right: 10px; 
-    cursor: pointer;
-   }
-
-   .radioContainer input[type="radio"]:checked {
-    background-color: #000000
-   }
-
-   .textUrlContainer {
-    position: relative;
-    display: flex;
-    margin-top: 3%;
-    margin-left: 5%;
-    
-   }
-
-   .textUrlForm {
-    width: 30%;
-    height: 5vh;
-    margin-left: 2%;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-   }
-
-   .textUrlForm1 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 38%;
-    position: absolute;
-    border-radius: 8px;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    outline: none;
-   }
-
-   .radioBtn1 {
-    position: absolute;
-    margin-left: -35%;
-    margin-top: 7%;
-   }
-
-   .textUrlForm2 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 4%;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    position: absolute;
-    margin-top: 6%;
-    right: 65%;
-   }
-
-   .textUrlForm3 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 3.2%;
-    position: absolute;
-    border-radius: 8px;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    outline: none;
-    margin-top: 6%;
-   }
-
-   .radioBtn2 {
-    position: absolute;
-    margin-left: -35%;
-    margin-top: 13%;
-   }
-
-   .textUrlForm4 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 4%;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    position: absolute;
-    margin-top: 12%;
-    right: 65%;
-   }
-
-   .textUrlForm5 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 3.2%;
-    position: absolute;
-    border-radius: 8px;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    outline: none;
-    margin-top: 12%;
-   }
-
-   .radioBtn3 {
-    position: absolute;
-    margin-left: -35%;
-    margin-top: 19%;
-   }
-
-   .textUrlForm6 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 4%;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    position: absolute;
-    margin-top: 18%;
-    right: 65%;
-   }
-
-   .textUrlForm7 {
-    width: 30%;
-    height: 5vh;
-    margin-left: 3.2%;
-    position: absolute;
-    border-radius: 8px;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 0px #9f9f9f;
-    font-size: 1.1em;
-    padding-left: 1%;
-    color: #9f9f9f;
-    outline: none;
-    margin-top: 18%;
-   }
 
 
-   
-
-
-   

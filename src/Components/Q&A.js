@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./q&a.module.css";
 import Cross from "../Images/cross.png";
 import Plus from "../Images/plus.jpg";
+import DeleteIcon from "../Images/delete.png";
 
 const QandA = () => {
   const [numButtons, setNumButtons] = useState(1);
@@ -76,51 +77,81 @@ const QandA = () => {
             placeholder="Image Url"
             className={styles.textUrlForm1}
           />
-        <div>
-        <input id="optionType2" type="radio" name="optionType" className= {styles.radioBtn1} />
-          <input
-            id="optionType2"
-            type="text"
-            placeholder="Text"
-            className={styles.textUrlForm2}
-          />
-          <input
-            id="optionType2"
-            type="text"
-            placeholder="Image Url"
-            className={styles.textUrlForm3}
-          />
+          <div>
+            <input
+              id="optionType2"
+              type="radio"
+              name="optionType"
+              className={styles.radioBtn1}
+            />
+            <input
+              id="optionType2"
+              type="text"
+              placeholder="Text"
+              className={styles.textUrlForm2}
+            />
+            <input
+              id="optionType2"
+              type="text"
+              placeholder="Image Url"
+              className={styles.textUrlForm3}
+            />
+          </div>
+          <div>
+            <input
+              id="optionType3"
+              type="radio"
+              name="optionType"
+              className={styles.radioBtn2}
+            />
+            <input
+              id="optionType3"
+              type="text"
+              placeholder="Text"
+              className={styles.textUrlForm4}
+            />
+            <input
+              id="optionType3"
+              type="text"
+              placeholder="Image Url"
+              className={styles.textUrlForm5}
+            />
+            <button className={styles.deleteIcon1}>
+              <img src={DeleteIcon} alt="deletebutton" />
+            </button>
+          </div>
+          <div>
+            <input
+              id="optionType4"
+              type="radio"
+              name="optionType"
+              className={styles.radioBtn3}
+            />
+            <input
+              id="optionType4"
+              type="text"
+              placeholder="Text"
+              className={styles.textUrlForm6}
+            />
+            <input
+              id="optionType4"
+              type="text"
+              placeholder="Image Url"
+              className={styles.textUrlForm7}
+            />
+            <button className={styles.deleteIcon2}>
+              <img src={DeleteIcon} alt="deletebutton" />
+            </button>
+          </div>
+          <button className={styles.addOptionBtn}>Add Option</button>
         </div>
-        <div>
-        <input id="optionType3" type="radio" name="optionType" className= {styles.radioBtn2} />
-          <input
-            id="optionType3"
-            type="text"
-            placeholder="Text"
-            className={styles.textUrlForm4}
-          />
-          <input
-            id="optionType3"
-            type="text"
-            placeholder="Image Url"
-            className={styles.textUrlForm5}
-          />
-        </div>
-        <div>
-        <input id="optionType4" type="radio" name="optionType" className= {styles.radioBtn3} />
-          <input
-            id="optionType4"
-            type="text"
-            placeholder="Text"
-            className={styles.textUrlForm6}
-          />
-          <input
-            id="optionType4"
-            type="text"
-            placeholder="Image Url"
-            className={styles.textUrlForm7}
-          />
-        </div>
+        <div className={styles.caCqContainer}>
+          <button className={`${styles.caCqBtns} ${styles.cancelBtn}`}>
+            Cancel
+          </button>
+          <button className={`${styles.caCqBtns} ${styles.continueBtn}`}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./q&a.module.css";
 import Cross from "../Images/cross.png";
 import Plus from "../Images/plus.jpg";
@@ -6,6 +6,11 @@ import DeleteIcon from "../Images/delete.png";
 
 const QandA = () => {
   const [numButtons, setNumButtons] = useState(1);
+  const [inputVisibility, setInputVisibility] = useState({
+    delType3: false,
+    delType4: false,
+  });
+  const [nextInput, setNextInput] = useState('');
 
   const handleClick = (id) => {
     if (id === "add") {
@@ -16,6 +21,30 @@ const QandA = () => {
       setNumButtons((prevNumButtons) => prevNumButtons - 1);
     }
   };
+  const handleDeleteClick = (identifier) => {
+    setInputVisibility((prevVisibility) => ({
+       ...prevVisibility,
+       [identifier]: false,
+    }));
+    setNextInput('');
+   };
+
+  const handleAddOptionClick = () => {
+    if (!inputVisibility.delType3) {
+      setNextInput('delType3');
+    } else if (!inputVisibility.delType4) {
+      setNextInput('delType4');
+    }
+ };
+
+ useEffect(() => {
+    if (nextInput !== '') {
+      setInputVisibility((prevVisibility) => ({
+        ...prevVisibility,
+        [nextInput]: true,
+      }));
+    }
+  }, [nextInput]);
 
   return (
     <div className={styles.createTransparentQA}>
@@ -97,60 +126,72 @@ const QandA = () => {
               className={styles.textUrlForm3}
             />
           </div>
-          <div>
+          {inputVisibility.delType3 && (
+            <div>
             <input
-              id="optionType3"
+              id="delType3"
               type="radio"
               name="optionType"
               className={styles.radioBtn2}
             />
             <input
-              id="optionType3"
+              id="delType3Text"
               type="text"
               placeholder="Text"
               className={styles.textUrlForm4}
             />
             <input
-              id="optionType3"
+              id="delType3Image"
               type="text"
               placeholder="Image Url"
               className={styles.textUrlForm5}
             />
-            <button className={styles.deleteIcon1}>
-              <img src={DeleteIcon} alt="deletebutton" />
+            <button
+              className={styles.deleteIcon1}
+              onClick={() => handleDeleteClick("delType3")}
+            >
+              <img src={DeleteIcon} alt="Delete" />
             </button>
           </div>
-          <div>
+          )}
+          {inputVisibility.delType4 && (
+            <div>
             <input
-              id="optionType4"
+              id="delType4"
               type="radio"
               name="optionType"
               className={styles.radioBtn3}
             />
             <input
-              id="optionType4"
+              id="delType3Text"
               type="text"
               placeholder="Text"
               className={styles.textUrlForm6}
             />
             <input
-              id="optionType4"
+              id="delType4Image"
               type="text"
               placeholder="Image Url"
               className={styles.textUrlForm7}
             />
-            <button className={styles.deleteIcon2}>
-              <img src={DeleteIcon} alt="deletebutton" />
+            <button
+              className={styles.deleteIcon2}
+              onClick={() => handleDeleteClick("delType4")}
+            >
+              <img src={DeleteIcon} alt="Delete" />
             </button>
           </div>
-          <button className={styles.addOptionBtn}>Add Option</button>
+          )}
+        {!inputVisibility.delType3 || !inputVisibility.delType4 ? (
+        <button className={styles.addOptionBtn} onClick={handleAddOptionClick}>Add Option</button>
+      ) : null}
         </div>
         <div className={styles.caCqContainer}>
           <button className={`${styles.caCqBtns} ${styles.cancelBtn}`}>
             Cancel
           </button>
           <button className={`${styles.caCqBtns} ${styles.continueBtn}`}>
-            Cancel
+            Create Quiz
           </button>
         </div>
       </div>

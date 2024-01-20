@@ -1,0 +1,66 @@
+.createTransparentQA {
+  background: #000000cf;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.qandAContainerBox {
+  position: relative;
+  display: block;
+  width: 58%;
+  height: 75vh;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.qButtonContainer {
+  position: relative;
+  top: 18%;
+  display: flex;
+  margin-left: 8%;
+  border: none;
+}
+
+.qButton {
+  width: 6%;
+  height: 6vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: 600;
+  color: #9f9f9f;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px #9f9f9f;
+  transition: 0.3s;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+.plusImg {
+  position: relative;
+  width: 60%;
+  height: 4vh;
+  top: 12%;
+}
+.addBtn {
+  position: absolute;
+  margin-top: 3%;
+}
+
+.crossImgBtn {
+  position: relative;
+  left: 30%;
+  top: -28%;
+}
+
+.maxText {
+    position: relative;
+    font-weight: 500;
+    left: 20%;
+    font-size: 1.4em;
+    color: #9f9f9f;
+}

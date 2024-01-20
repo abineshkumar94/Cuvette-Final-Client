@@ -6,6 +6,7 @@ import Analytics from "./Components/Analytics";
 import Signin from "./Authentication/Signin";
 import Login from "./Authentication/Login";
 import CreateQuiz from "./Components/CreateQuiz";
+import QandA from "./Components/Q&A";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="analytics" element={ <Analytics/> }/>
         <Route path="createquiz" element= { <CreateQuiz/> } />
+        <Route path="qanda" element= { <QandA/> } />
       </Routes>
     </div>
   );

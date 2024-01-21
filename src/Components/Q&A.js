@@ -6,12 +6,15 @@ import DeleteIcon from "../Images/delete.png";
 
 const QandA = () => {
   const [numButtons, setNumButtons] = useState(1);
+
   const [inputVisibility, setInputVisibility] = useState({
     delType3: false,
     delType4: false,
+    delType5: false,
+    delType6: false,
   });
-  const [nextInput, setNextInput] = useState('');
 
+  const [nextInput, setNextInput] = useState("");
   const handleClick = (id) => {
     if (id === "add") {
       if (numButtons < 5) {
@@ -21,24 +24,21 @@ const QandA = () => {
       setNumButtons((prevNumButtons) => prevNumButtons - 1);
     }
   };
-  const handleDeleteClick = (identifier) => {
-    setInputVisibility((prevVisibility) => ({
-       ...prevVisibility,
-       [identifier]: false,
-    }));
-    setNextInput('');
-   };
 
   const handleAddOptionClick = () => {
     if (!inputVisibility.delType3) {
-      setNextInput('delType3');
+      setNextInput("delType3");
     } else if (!inputVisibility.delType4) {
-      setNextInput('delType4');
+      setNextInput("delType4");
+    } else if (!inputVisibility.delType5) {
+      setNextInput("delType5");
+    } else if (!inputVisibility.delType6) {
+      setNextInput("delType6");
     }
- };
+  };
 
- useEffect(() => {
-    if (nextInput !== '') {
+  useEffect(() => {
+    if (nextInput !== "") {
       setInputVisibility((prevVisibility) => ({
         ...prevVisibility,
         [nextInput]: true,
@@ -91,101 +91,117 @@ const QandA = () => {
             <input id="optionType3" type="radio" name="optionType" />
             <label htmlFor="optionType3">Text & Image Url</label>
           </div>
-        </form>
-        <div className={styles.textUrlContainer}>
-          <input id="optionType1" type="radio" name="optionType" />
-          <input
-            id="optionType1"
-            type="text"
-            placeholder="Text"
-            className={styles.textUrlForm}
-          />
-          <input
-            id="optionType1"
-            type="text"
-            placeholder="Image Url"
-            className={styles.textUrlForm1}
-          />
-          <div>
+          <div className={styles.optionInputContainer}>
+            <div>
+              <input
+                id="optionType4"
+                type="radio"
+                name="optionType"
+                className={styles.radioButton}
+              />
+            </div>
             <input
-              id="optionType2"
-              type="radio"
-              name="optionType"
-              className={styles.radioBtn1}
-            />
-            <input
-              id="optionType2"
               type="text"
               placeholder="Text"
-              className={styles.textUrlForm2}
+              className={styles.optionInput}
             />
+            <div>
+              <input
+                id="optionType5"
+                type="radio"
+                name="optionType"
+                className={styles.radioButton}
+              />
+            </div>
+
             <input
-              id="optionType2"
+              type="text"
+              placeholder="Text"
+              className={styles.optionInput}
+            />
+          </div>
+
+          {inputVisibility.delType3 && (
+            <div className={styles.optionInputContainer1}>
+              <div>
+                <input
+                  id="optionType6"
+                  type="radio"
+                  name="optionType"
+                  className={styles.radioButton1}
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Text"
+                className={styles.optionInput}
+              />
+            </div>
+          )}
+          {inputVisibility.delType4 && (
+            <div className={styles.optionInputContainer2}>
+              <div>
+                <input
+                  id="optionType7"
+                  type="radio"
+                  name="optionType"
+                  className={styles.radioButton1}
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Text"
+                className={styles.optionInput}
+              />
+            </div>
+          )}
+
+          <div className={styles.optionInputContainer3}>
+            <input
+              id="optionType4"
               type="text"
               placeholder="Image Url"
-              className={styles.textUrlForm3}
+              className={styles.optionInput}
+            />
+          </div>
+          <div className={styles.optionInputContainer4}>
+            <input
+              id="optionType5"
+              type="text"
+              placeholder="Image Url"
+              className={styles.optionInput}
             />
           </div>
           {inputVisibility.delType3 && (
-            <div>
-            <input
-              id="delType3"
-              type="radio"
-              name="optionType"
-              className={styles.radioBtn2}
-            />
-            <input
-              id="delType3Text"
-              type="text"
-              placeholder="Text"
-              className={styles.textUrlForm4}
-            />
-            <input
-              id="delType3Image"
-              type="text"
-              placeholder="Image Url"
-              className={styles.textUrlForm5}
-            />
-            <button
-              className={styles.deleteIcon1}
-              onClick={() => handleDeleteClick("delType3")}
-            >
-              <img src={DeleteIcon} alt="Delete" />
-            </button>
-          </div>
+            <div className={styles.Container5}>
+              <input
+                id="optionType8"
+                type="text"
+                placeholder="Image Url"
+                className={styles.optionInput}
+              />
+            </div>
           )}
+
           {inputVisibility.delType4 && (
-            <div>
-            <input
-              id="delType4"
-              type="radio"
-              name="optionType"
-              className={styles.radioBtn3}
-            />
-            <input
-              id="delType3Text"
-              type="text"
-              placeholder="Text"
-              className={styles.textUrlForm6}
-            />
-            <input
-              id="delType4Image"
-              type="text"
-              placeholder="Image Url"
-              className={styles.textUrlForm7}
-            />
-            <button
-              className={styles.deleteIcon2}
-              onClick={() => handleDeleteClick("delType4")}
-            >
-              <img src={DeleteIcon} alt="Delete" />
-            </button>
-          </div>
+            <div className={styles.Container6}>
+              <input
+                id="optionType9"
+                type="text"
+                placeholder="Image Url"
+                className={styles.optionInput}
+              />
+            </div>
           )}
-        {!inputVisibility.delType3 || !inputVisibility.delType4 ? (
-        <button className={styles.addOptionBtn} onClick={handleAddOptionClick}>Add Option</button>
-      ) : null}
-        </div>
+        </form>
+        {!(inputVisibility.delType3 && inputVisibility.delType4) && (
+          <button
+            onClick={handleAddOptionClick}
+            className={styles.addOptionbtn}
+          >
+            Add Option
+          </button>
+        )}
         <div className={styles.caCqContainer}>
           <button className={`${styles.caCqBtns} ${styles.cancelBtn}`}>
             Cancel

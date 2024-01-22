@@ -36,10 +36,18 @@ const QandA = () => {
     } else if (!inputVisibility.delType6) {
       setNextInput("delType6");
     }
+    
   };
 
   const handleOptionTypeChange = (event) => {
     setOptionType(event.target.value);
+  };
+
+  const handleDeleteOptionClick = (inputKey) => {
+    setInputVisibility((prevVisibility) => ({
+      ...prevVisibility,
+      [inputKey]: false,
+    }));
   };
 
   useEffect(() => {
@@ -302,6 +310,20 @@ const QandA = () => {
             </div>
           )}
         </form>
+        {inputVisibility.delType3 && (
+          <div className={styles.delBtnContainer} >
+            <button onClick={() => handleDeleteOptionClick('delType3')} className={styles.delbttns}>
+              <img src={DeleteIcon} alt="deleteicon" />
+            </button>
+          </div>
+        )}
+        {inputVisibility.delType4 && (
+          <div className={styles.delBtnContainer1} >
+            <button onClick={() => handleDeleteOptionClick('delType4')} className={styles.delbttns}>
+              <img src={DeleteIcon} alt="deleteicon" />
+            </button>
+          </div>
+        )}
         {!(inputVisibility.delType3 && inputVisibility.delType4) && (
           <button
             onClick={handleAddOptionClick}

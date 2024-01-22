@@ -281,15 +281,44 @@
   box-shadow: 0px 0px 10px 0px #9f9f9f;
   font-size: 1.1em;
   color: #9f9f9f;
+  top: 35%;
 }
 
 .caCqContainer {
   display: flex;
   position: relative;
-
   gap: 23%;
   margin-left: 6%;
-  margin-top: 33%;
+  top: 50%;
+  
+}
+
+.delBtnContainer {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 63%;
+  left: 60%;
+}
+
+.delBtnContainer1 {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 73%;
+  left: 60%;
+}
+
+
+.delbttns {
+  position: relative;
+  width: 5%;
+  height: 5vh;
+  left: 63%;
+  margin-top: 2%;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 .caCqBtns {
@@ -304,6 +333,8 @@
   box-shadow: 0px 0px 10px 0px #9f9f9f;
   font-size: 1.1em;
   transition: 0.3s;
+  position: relative;
+  margin-top: 0%;
 }
 
 .cancelBtn:hover {

@@ -107,7 +107,14 @@ const QandA = () => {
             <label htmlFor="optionType2">Image Url</label>
           </div>
           <div>
-            <input id="optionType3" type="radio" name="optionType" />
+            <input
+              id="optionType3"
+              type="radio"
+              value="textAndImageUrl"
+              name="optionType"
+              onChange={handleOptionTypeChange}
+              checked={optionType === "textAndImageUrl"}
+            />
             <label htmlFor="optionType3">Text & Image Url</label>
           </div>
           <div className={styles.optionInputContainer}>
@@ -123,7 +130,7 @@ const QandA = () => {
                 }
               />
             </div>
-            {optionType === "text" && (
+            {(optionType === "text" || optionType === "textAndImageUrl") && (
               <div>
                 <input
                   type="text"
@@ -145,7 +152,7 @@ const QandA = () => {
               />
             </div>
 
-            {optionType === "text" && (
+            {(optionType === "text" || optionType === "textAndImageUrl") && (
               <div>
                 <input
                   type="text"
@@ -170,7 +177,7 @@ const QandA = () => {
                   }
                 />
               </div>
-              {optionType === "text" && (
+              {(optionType === "text" || optionType === "textAndImageUrl") && (
                 <div>
                   <input
                     type="text"
@@ -195,7 +202,7 @@ const QandA = () => {
                   }
                 />
               </div>
-              {optionType === "text" && (
+              {(optionType === "text" || optionType === "textAndImageUrl") && (
                 <div>
                   <input
                     type="text"
@@ -207,7 +214,7 @@ const QandA = () => {
             </div>
           )}
 
-          {optionType === "imageUrl" && (
+          {(optionType === "imageUrl" || optionType === "textAndImageUrl") && (
             <div
               className={
                 optionType === "imageUrl"
@@ -215,16 +222,21 @@ const QandA = () => {
                   : styles.optionInputContainer3
               }
             >
-              <input
-                id="imageUrlInput1"
-                type="text"
-                placeholder="Image Url"
-                className={styles.optionInput}
-              />
+              {(optionType === "imageUrl" ||
+                optionType === "textAndImageUrl") && (
+                <div>
+                  <input
+                    id="imageUrlInput1"
+                    type="text"
+                    placeholder="Image Url"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-          {optionType === "imageUrl" && (
+          {(optionType === "imageUrl" || optionType === "textAndImageUrl") && (
             <div
               className={
                 optionType === "imageUrl"
@@ -232,16 +244,21 @@ const QandA = () => {
                   : styles.optionInputContainer4
               }
             >
-              <input
-                id="imageUrlInput2"
-                type="text"
-                placeholder="Image Url"
-                className={styles.optionInput}
-              />
+              {(optionType === "imageUrl" ||
+                optionType === "textAndImageUrl") && (
+                <div>
+                  <input
+                    id="imageUrlInput2"
+                    type="text"
+                    placeholder="Image Url"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-          {optionType === "imageUrl" && inputVisibility.delType3 && (
+          {inputVisibility.delType3 && (
             <div
               className={
                 optionType === "imageUrl"
@@ -249,16 +266,21 @@ const QandA = () => {
                   : styles.Container5
               }
             >
-              <input
-                id="imageUrlInput3"
-                type="text"
-                placeholder="Image Url"
-                className={styles.optionInput}
-              />
+              {(optionType === "imageUrl" ||
+                optionType === "textAndImageUrl") && (
+                <div>
+                  <input
+                    id="imageUrlInput3"
+                    type="text"
+                    placeholder="Image Url"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-          {optionType === "imageUrl" && inputVisibility.delType4 && (
+          {inputVisibility.delType4 && (
             <div
               className={
                 optionType === "imageUrl"
@@ -266,12 +288,17 @@ const QandA = () => {
                   : styles.Container6
               }
             >
-              <input
-                id="imageUrlInput4"
-                type="text"
-                placeholder="Image Url"
-                className={styles.optionInput}
-              />
+              {(optionType === "imageUrl" ||
+                optionType === "textAndImageUrl") && (
+                <div>
+                  <input
+                    id="imageUrlInput4"
+                    type="text"
+                    placeholder="Image Url"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
         </form>

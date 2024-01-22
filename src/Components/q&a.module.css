@@ -143,7 +143,6 @@
   margin-left: 25%;
 }
 
-
 .optionInputContainer4 {
   position: absolute;
   display: flex;
@@ -165,7 +164,6 @@
   right: 51%;
 }
 
-
 .Container6 {
   position: absolute;
   display: flex;
@@ -177,19 +175,87 @@
   right: 51%;
 }
 
+.optionInputContainer3Selected {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 4.2%;
+  margin-left: 1%;
+  top: 0%;
+}
+
+.optionInputContainer4Selected {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 9%;
+  margin-left: 1%;
+  top: 0%;
+}
+
+.Container5Selected {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 16.5%;
+  margin-left: 3%;
+  right: 75%;
+  top: 0%;
+}
+
+.Container6Selected {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 23%;
+  margin-left: 3%;
+  right: 75%;
+  top: 0%;
+}
+
 .radioButton {
   position: absolute;
   right: 100%;
-  margin-top: 10%;
+  top: 21%;
 }
 
 .radioButton1 {
   position: absolute;
   right: 100%;
-  margin-top: 9%;
+  top: 73%;
 }
 
+.radioButton2 {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+}
 
+.radioButtonImg1 {
+  position: relative;
+  right: 100%;
+  top: 11%;
+}
+
+.radioButtonImg2 {
+  position: absolute;
+  right: 100%;
+  top: 140%;
+}
+
+.radioButtonImg3 {
+  position: absolute;
+  right: 100%;
+  margin-top: 90%;
+}
 
 .optionInput {
   height: 2em;
@@ -202,8 +268,6 @@
   box-shadow: 0px 0px 10px 0px #9f9f9f;
   color: #9f9f9f;
 }
-
-
 
 .addOptionbtn {
   position: absolute;
@@ -222,7 +286,7 @@
 .caCqContainer {
   display: flex;
   position: relative;
-  
+
   gap: 23%;
   margin-left: 6%;
   margin-top: 33%;

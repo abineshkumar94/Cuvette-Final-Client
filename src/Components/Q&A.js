@@ -15,6 +15,7 @@ const QandA = () => {
   });
 
   const [nextInput, setNextInput] = useState("");
+  const [optionType, setOptionType] = useState("text");
   const handleClick = (id) => {
     if (id === "add") {
       if (numButtons < 5) {
@@ -35,6 +36,10 @@ const QandA = () => {
     } else if (!inputVisibility.delType6) {
       setNextInput("delType6");
     }
+  };
+
+  const handleOptionTypeChange = (event) => {
+    setOptionType(event.target.value);
   };
 
   useEffect(() => {
@@ -80,11 +85,25 @@ const QandA = () => {
         <form className={styles.radioContainer}>
           <span>Option Type</span>
           <div>
-            <input id="optionType1" type="radio" name="optionType" />
+            <input
+              id="optionType1"
+              type="radio"
+              name="optionType"
+              value="text"
+              onChange={handleOptionTypeChange}
+              checked={optionType === "text"}
+            />
             <label htmlFor="optionType1">Text</label>
           </div>
           <div>
-            <input id="optionType2" type="radio" name="optionType" />
+            <input
+              id="optionType2"
+              type="radio"
+              name="optionType"
+              value="imageUrl"
+              onChange={handleOptionTypeChange}
+              checked={optionType === "imageUrl"}
+            />
             <label htmlFor="optionType2">Image Url</label>
           </div>
           <div>
@@ -97,28 +116,44 @@ const QandA = () => {
                 id="optionType4"
                 type="radio"
                 name="optionType"
-                className={styles.radioButton}
+                className={
+                  optionType === "imageUrl"
+                    ? styles.radioButtonImg1
+                    : styles.radioButton
+                }
               />
             </div>
-            <input
-              type="text"
-              placeholder="Text"
-              className={styles.optionInput}
-            />
+            {optionType === "text" && (
+              <div>
+                <input
+                  type="text"
+                  placeholder="Text"
+                  className={styles.optionInput}
+                />
+              </div>
+            )}
             <div>
               <input
                 id="optionType5"
                 type="radio"
                 name="optionType"
-                className={styles.radioButton}
+                className={
+                  optionType === "imageUrl"
+                    ? styles.radioButtonImg2
+                    : styles.radioButton1
+                }
               />
             </div>
 
-            <input
-              type="text"
-              placeholder="Text"
-              className={styles.optionInput}
-            />
+            {optionType === "text" && (
+              <div>
+                <input
+                  type="text"
+                  placeholder="Text"
+                  className={styles.optionInput}
+                />
+              </div>
+            )}
           </div>
 
           {inputVisibility.delType3 && (
@@ -128,14 +163,22 @@ const QandA = () => {
                   id="optionType6"
                   type="radio"
                   name="optionType"
-                  className={styles.radioButton1}
+                  className={
+                    optionType === "imageUrl"
+                      ? styles.radioButtonImg3
+                      : styles.radioButton2
+                  }
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Text"
-                className={styles.optionInput}
-              />
+              {optionType === "text" && (
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Text"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
           {inputVisibility.delType4 && (
@@ -145,37 +188,35 @@ const QandA = () => {
                   id="optionType7"
                   type="radio"
                   name="optionType"
-                  className={styles.radioButton1}
+                  className={
+                    optionType === "imageUrl"
+                      ? styles.radioButtonImg3
+                      : styles.radioButton2
+                  }
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Text"
-                className={styles.optionInput}
-              />
+              {optionType === "text" && (
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Text"
+                    className={styles.optionInput}
+                  />
+                </div>
+              )}
             </div>
           )}
 
-          <div className={styles.optionInputContainer3}>
-            <input
-              id="optionType4"
-              type="text"
-              placeholder="Image Url"
-              className={styles.optionInput}
-            />
-          </div>
-          <div className={styles.optionInputContainer4}>
-            <input
-              id="optionType5"
-              type="text"
-              placeholder="Image Url"
-              className={styles.optionInput}
-            />
-          </div>
-          {inputVisibility.delType3 && (
-            <div className={styles.Container5}>
+          {optionType === "imageUrl" && (
+            <div
+              className={
+                optionType === "imageUrl"
+                  ? styles.optionInputContainer3Selected
+                  : styles.optionInputContainer3
+              }
+            >
               <input
-                id="optionType8"
+                id="imageUrlInput1"
                 type="text"
                 placeholder="Image Url"
                 className={styles.optionInput}
@@ -183,10 +224,50 @@ const QandA = () => {
             </div>
           )}
 
-          {inputVisibility.delType4 && (
-            <div className={styles.Container6}>
+          {optionType === "imageUrl" && (
+            <div
+              className={
+                optionType === "imageUrl"
+                  ? styles.optionInputContainer4Selected
+                  : styles.optionInputContainer4
+              }
+            >
               <input
-                id="optionType9"
+                id="imageUrlInput2"
+                type="text"
+                placeholder="Image Url"
+                className={styles.optionInput}
+              />
+            </div>
+          )}
+
+          {optionType === "imageUrl" && inputVisibility.delType3 && (
+            <div
+              className={
+                optionType === "imageUrl"
+                  ? styles.Container5Selected
+                  : styles.Container5
+              }
+            >
+              <input
+                id="imageUrlInput3"
+                type="text"
+                placeholder="Image Url"
+                className={styles.optionInput}
+              />
+            </div>
+          )}
+
+          {optionType === "imageUrl" && inputVisibility.delType4 && (
+            <div
+              className={
+                optionType === "imageUrl"
+                  ? styles.Container6Selected
+                  : styles.Container6
+              }
+            >
+              <input
+                id="imageUrlInput4"
                 type="text"
                 placeholder="Image Url"
                 className={styles.optionInput}

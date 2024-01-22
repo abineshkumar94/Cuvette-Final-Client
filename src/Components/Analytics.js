@@ -1,16 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./analytics.module.css";
 import deleteIcon from "../Images/delete.png";
 import shareIcon from "../Images/share.png";
 import editIcon from "../Images/edit.png";
 import { useNavigate } from "react-router-dom";
+import CreateQuiz from "./CreateQuiz";
+import QandA from "./Q&A";
 
 const Analytics = () => {
   const navigate = useNavigate();
+  const [showCreateQuiz, setShowCreateQuiz] = useState(false);
+  const [showQandA, setShowQandA] = useState(false);
 
   const goToDashboard = () => {
     navigate('/dashboard')
   }
+  const handleCreateQuizClick = () => {
+    setShowCreateQuiz(true);
+  };
+
+  const handleQandAClick = () => {
+    setShowQandA(true);
+    setShowCreateQuiz(false);
+  };
   return (
     <div className={styles.analyticsBg}>
       <div className={styles.quizAnalysisContainer}>
@@ -46,7 +58,19 @@ const Analytics = () => {
         <button className={`${styles.containerBtns} ${styles.dashboardButton}`}>
           Analytics
         </button>
-        <button className={styles.containerBtns}>Create Quiz</button>
+        <button
+          className={styles.containerBtns}
+          onClick={handleCreateQuizClick}
+        >
+          Create Quiz
+        </button>
+        {showCreateQuiz && (
+          <CreateQuiz
+            onClose={() => setShowCreateQuiz(false)}
+            onQandAClick={handleQandAClick}
+          />
+        )}
+       {showQandA && <QandA onClose={() => setShowQandA(false)} />}
         <button className={styles.logoutBtn}>Logout</button>
       </div>
     </div>

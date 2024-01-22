@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from "./createquiz.module.css";
 import { useNavigate } from "react-router-dom";
+import QandA from './Q&A';
 
-const CreateQuiz = () => {
+const CreateQuiz = (props) => {
     const navigate = useNavigate();
+    const [showQandA, setShowQandA,] = useState(false);
+   
+    const handleQandAClick = () => {
+        setShowQandA(true); 
+        props.onClose();
+        props.onQandAClick(); 
+      }
   return (
     <div className= {styles.createTransparent } >
             <div className= {styles.createContainerBox} >
@@ -12,8 +20,10 @@ const CreateQuiz = () => {
         </form>
         <div className= {styles.qTypeContainer} >
             <p>Quiz Type</p>
-            <button className= {styles.qTypeBtn } >Q & A</button>
+            <button className= {styles.qTypeBtn } onClick={handleQandAClick}>Q & A</button>
+            {showQandA && <QandA/> }
             <button className= {styles.qTypeBtn }>Poll Type</button>
+            
         </div>
         <div className= {styles.ccanContainer } >
             <button className={`${styles.ccBtns} ${styles.cancelBtn}`}>Cancel</button>

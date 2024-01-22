@@ -4,8 +4,11 @@ import Cross from "../Images/cross.png";
 import Plus from "../Images/plus.jpg";
 import DeleteIcon from "../Images/delete.png";
 
-const QandA = () => {
+const QandA = (props) => {
   const [numButtons, setNumButtons] = useState(1);
+  const [quizName, setQuizName] = useState("");
+  const [text, setText] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const [inputVisibility, setInputVisibility] = useState({
     delType3: false,
@@ -36,7 +39,6 @@ const QandA = () => {
     } else if (!inputVisibility.delType6) {
       setNextInput("delType6");
     }
-    
   };
 
   const handleOptionTypeChange = (event) => {
@@ -58,6 +60,32 @@ const QandA = () => {
       }));
     }
   }, [nextInput]);
+
+  const handleQuizNameChange = (event) => {
+    setQuizName(event.target.value);
+  };
+
+  const handleTextChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleImageUrl = (event) => {
+    setImageUrl(event.target.value);
+  };
+
+  const handleCreateQuizClick = () => {
+    const dataToSubmit = {
+      text: text,
+      imageUrl: imageUrl,
+    };
+    // Do something with the data, e.g., log it to the console or send it to a server
+    console.log(dataToSubmit);
+  };
+
+  const handleCancelClick = () => {
+    
+    props.onClose();
+  };
 
   return (
     <div className={styles.createTransparentQA}>
@@ -88,6 +116,8 @@ const QandA = () => {
             type="text"
             className={styles.qandacreateform}
             placeholder="Quiz name"
+            value={quizName}
+            onChange={handleQuizNameChange}
           ></input>
         </form>
         <form className={styles.radioContainer}>
@@ -144,6 +174,8 @@ const QandA = () => {
                   type="text"
                   placeholder="Text"
                   className={styles.optionInput}
+                  value={text}
+                  onChange={handleTextChange}
                 />
               </div>
             )}
@@ -166,6 +198,8 @@ const QandA = () => {
                   type="text"
                   placeholder="Text"
                   className={styles.optionInput}
+                  value={text}
+                  onChange={handleTextChange}
                 />
               </div>
             )}
@@ -191,6 +225,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Text"
                     className={styles.optionInput}
+                    value={text}
+                    onChange={handleTextChange}
                   />
                 </div>
               )}
@@ -216,6 +252,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Text"
                     className={styles.optionInput}
+                    value={text}
+                    onChange={handleTextChange}
                   />
                 </div>
               )}
@@ -238,6 +276,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
+                    value={imageUrl}
+                    onChange={handleImageUrl}
                   />
                 </div>
               )}
@@ -260,6 +300,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
+                    value={imageUrl}
+                    onChange={handleImageUrl}
                   />
                 </div>
               )}
@@ -282,6 +324,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
+                    value={imageUrl}
+                    onChange={handleImageUrl}
                   />
                 </div>
               )}
@@ -304,6 +348,8 @@ const QandA = () => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
+                    value={imageUrl}
+                    onChange={handleImageUrl}
                   />
                 </div>
               )}
@@ -311,15 +357,21 @@ const QandA = () => {
           )}
         </form>
         {inputVisibility.delType3 && (
-          <div className={styles.delBtnContainer} >
-            <button onClick={() => handleDeleteOptionClick('delType3')} className={styles.delbttns}>
+          <div className={styles.delBtnContainer}>
+            <button
+              onClick={() => handleDeleteOptionClick("delType3")}
+              className={styles.delbttns}
+            >
               <img src={DeleteIcon} alt="deleteicon" />
             </button>
           </div>
         )}
         {inputVisibility.delType4 && (
-          <div className={styles.delBtnContainer1} >
-            <button onClick={() => handleDeleteOptionClick('delType4')} className={styles.delbttns}>
+          <div className={styles.delBtnContainer1}>
+            <button
+              onClick={() => handleDeleteOptionClick("delType4")}
+              className={styles.delbttns}
+            >
               <img src={DeleteIcon} alt="deleteicon" />
             </button>
           </div>
@@ -333,10 +385,16 @@ const QandA = () => {
           </button>
         )}
         <div className={styles.caCqContainer}>
-          <button className={`${styles.caCqBtns} ${styles.cancelBtn}`}>
+          <button
+            className={`${styles.caCqBtns} ${styles.cancelBtn}`}
+            onClick={handleCancelClick}
+          >
             Cancel
           </button>
-          <button className={`${styles.caCqBtns} ${styles.continueBtn}`}>
+          <button
+            className={`${styles.caCqBtns} ${styles.continueBtn}`}
+            onClick={handleCreateQuizClick}
+          >
             Create Quiz
           </button>
         </div>

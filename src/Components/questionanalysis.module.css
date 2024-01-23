@@ -1,0 +1,84 @@
+.qaBackground {
+    position: relative;
+    padding: 0%;
+    margin-top: 10%;
+    background-color: #ededed;
+    height: 100vh;
+    margin-top: 0%;
+}
+
+.quizAnalysisContainer {
+    position: relative;
+    top: 15%;
+    left: 5%;
+    text-align: center;
+  }
+  
+  .quizAnalysisPara {
+    font-weight: 700;
+    color: #5076ff;
+    font-size: 2.5em;
+  }
+
+  .buttonContainer {
+    position: fixed;
+    margin: 0%;
+    width: 15%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: -7%;
+    top: 13%;
+  }
+
+  .buttonContainerPara {
+    font-family: Jomhuria;
+    font-weight: 400;
+    font-size: 3em;
+    color: #474444;
+    letter-spacing: 2px;
+    position: relative;
+    margin-top: 15%;
+    margin-left: 25%;
+  }
+
+  .containerBtns {
+    width: 55%;
+    height: 7%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1em;
+    background-color: #ffffff;
+    border: none;
+    white-space: nowrap;
+    border-radius: 8px;
+    margin-left: 21%;
+    position: relative;
+    top: 15%;
+    margin-top: 20%;
+    cursor: pointer;
+    color: #474444;
+  }
+
+  .dashboardButton {
+    box-shadow: 0px 0px 30px 0px #a9bcff;
+  }
+  
+  .logoutBtn {
+    width: 55%;
+    height: 7%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1em;
+    background-color: #ffffff;
+    border: none;
+    white-space: nowrap;
+    border-radius: 8px;
+    margin-left: 21%;
+    position: relative;
+    top: 33%;
+    margin-top: 20%;
+    cursor: pointer;
+    color: #474444;
+  }

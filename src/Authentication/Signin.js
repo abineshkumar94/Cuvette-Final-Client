@@ -1,8 +1,11 @@
 import { useState } from "react";
 import React from "react";
 import styles from "./signin.module.css";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,10 +49,16 @@ const Signin = () => {
       errors.confirmPassword = "Confirm Password is required";
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
-      console.log({ name, email, password, confirmPassword });
+      axios.post('http://localhost:4000/api/v1/signup', { name, email, password, confirmPassword })
+        .then(response => {
+          console.log('Success:', response.data);
+          navigate('/login');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     }
-  };
-
+ };
   const getPlaceholder = (field) => {
     if (touched[field]) {
       switch (field) {

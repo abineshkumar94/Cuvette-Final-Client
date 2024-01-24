@@ -6,9 +6,17 @@ import DeleteIcon from "../Images/delete.png";
 
 const QandA = (props) => {
   const [numButtons, setNumButtons] = useState(1);
-  const [quizName, setQuizName] = useState("");
-  const [text, setText] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [createdQuizzes, setCreatedQuizzes] = useState([]);
+
+  const [questionDetails, setQuestionDetails] = useState({
+    quizName: "",
+    questions: [
+      { text: "", imageUrl: "" },
+      { text: "", imageUrl: "" },
+      { text: "", imageUrl: "" },
+      { text: "", imageUrl: "" },
+    ],
+  });
 
   const [inputVisibility, setInputVisibility] = useState({
     delType3: false,
@@ -61,31 +69,33 @@ const QandA = (props) => {
     }
   }, [nextInput]);
 
-  const handleQuizNameChange = (event) => {
-    setQuizName(event.target.value);
-  };
-
-  const handleTextChange = (event) => {
-    setText(event.target.value);
-  };
-
-  const handleImageUrl = (event) => {
-    setImageUrl(event.target.value);
-  };
-
-  const handleCreateQuizClick = () => {
-    const dataToSubmit = {
-      text: text,
-      imageUrl: imageUrl,
-    };
-    // Do something with the data, e.g., log it to the console or send it to a server
-    console.log(dataToSubmit);
-  };
-
   const handleCancelClick = () => {
-    
     props.onClose();
   };
+
+  const handleQuestionDetailChange = (index, field, value) => {
+    setQuestionDetails((prevDetails) => {
+      if (index === -1) {
+        // Update quizName
+        return { ...prevDetails, quizName: value };
+      } else {
+        // Update questions array
+        const updatedQuestions = prevDetails.questions.map((question, idx) => {
+          if (idx === index) {
+            return { ...question, [field]: value };
+          }
+          return question;
+        });
+        return { ...prevDetails, questions: updatedQuestions };
+      }
+    });
+    
+  };
+
+  const handleCreateQuiz = () => {
+    setCreatedQuizzes((prevQuizzes) => [...prevQuizzes, questionDetails]);
+    console.log(questionDetails); };
+  
 
   return (
     <div className={styles.createTransparentQA}>
@@ -116,8 +126,10 @@ const QandA = (props) => {
             type="text"
             className={styles.qandacreateform}
             placeholder="Quiz name"
-            value={quizName}
-            onChange={handleQuizNameChange}
+            value={questionDetails.quizName}
+            onChange={(e) =>
+              handleQuestionDetailChange(-1, "quizName", e.target.value)
+            }
           ></input>
         </form>
         <form className={styles.radioContainer}>
@@ -174,8 +186,10 @@ const QandA = (props) => {
                   type="text"
                   placeholder="Text"
                   className={styles.optionInput}
-                  value={text}
-                  onChange={handleTextChange}
+                  value={questionDetails.questions[0].text}
+                  onChange={(e) =>
+                    handleQuestionDetailChange(0, "text", e.target.value)
+                  }
                 />
               </div>
             )}
@@ -198,8 +212,10 @@ const QandA = (props) => {
                   type="text"
                   placeholder="Text"
                   className={styles.optionInput}
-                  value={text}
-                  onChange={handleTextChange}
+                  value={questionDetails.questions[1].text}
+                  onChange={(e) =>
+                    handleQuestionDetailChange(1, "text", e.target.value)
+                  }
                 />
               </div>
             )}
@@ -225,8 +241,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Text"
                     className={styles.optionInput}
-                    value={text}
-                    onChange={handleTextChange}
+                    value={questionDetails.questions[2].text}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(2, "text", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -252,8 +270,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Text"
                     className={styles.optionInput}
-                    value={text}
-                    onChange={handleTextChange}
+                    value={questionDetails.questions[3].text}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(3, "text", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -276,8 +296,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
-                    value={imageUrl}
-                    onChange={handleImageUrl}
+                    value={questionDetails.questions[0].imageUrl}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(0, "imageUrl", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -300,8 +322,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
-                    value={imageUrl}
-                    onChange={handleImageUrl}
+                    value={questionDetails.questions[1].imageUrl}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(1, "imageUrl", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -324,8 +348,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
-                    value={imageUrl}
-                    onChange={handleImageUrl}
+                    value={questionDetails.questions[2].imageUrl}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(2, "imageUrl", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -348,8 +374,10 @@ const QandA = (props) => {
                     type="text"
                     placeholder="Image Url"
                     className={styles.optionInput}
-                    value={imageUrl}
-                    onChange={handleImageUrl}
+                    value={questionDetails.questions[3].imageUrl}
+                    onChange={(e) =>
+                      handleQuestionDetailChange(3, "imageUrl", e.target.value)
+                    }
                   />
                 </div>
               )}
@@ -393,7 +421,7 @@ const QandA = (props) => {
           </button>
           <button
             className={`${styles.caCqBtns} ${styles.continueBtn}`}
-            onClick={handleCreateQuizClick}
+            onClick={handleCreateQuiz}
           >
             Create Quiz
           </button>

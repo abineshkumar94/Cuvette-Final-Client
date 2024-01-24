@@ -7,12 +7,19 @@ const CreateQuiz = (props) => {
   const navigate = useNavigate();
   const [showQandA, setShowQandA] = useState(false);
   const [continueClicked, setContinueClicked] = useState(false);
+  const [selectedQuizType, setSelectedQuizType] = useState();
 
   const handleQandAClick = () => {
     setShowQandA(true);
+    setSelectedQuizType(() => "qa");
     props.onClose();
     props.onQandAClick();
-  };
+   };
+   
+   useEffect(() => {
+    console.log(selectedQuizType);
+    console.log(showQandA);
+   }, [selectedQuizType, showQandA]);
 
   const handleCancelClick = () => {
     props.onClose();
@@ -22,14 +29,13 @@ const CreateQuiz = (props) => {
     if (showQandA && !continueClicked) {
       setContinueClicked(true);
     }
- };
+  };
 
-
- useEffect(() => {
+  useEffect(() => {
     if (continueClicked) {
-      navigate('/path-to-QandA');
+      navigate("/path-to-QandA");
     }
- }, [continueClicked]);
+  }, [continueClicked]);
 
   return (
     <div className={styles.createTransparent}>
@@ -46,7 +52,7 @@ const CreateQuiz = (props) => {
           <button className={styles.qTypeBtn} onClick={handleQandAClick}>
             Q & A
           </button>
-          {showQandA && <QandA />}
+         
           <button className={styles.qTypeBtn}>Poll Type</button>
         </div>
         <div className={styles.ccanContainer}>
@@ -62,6 +68,7 @@ const CreateQuiz = (props) => {
           >
             Continue
           </button>
+          {showQandA && <QandA />}
         </div>
       </div>
     </div>
